@@ -9,8 +9,6 @@
     <?php endif; ?>
     
     <?php echo all_element_texts('item'); ?>
-    
-    <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </div><!-- end primary -->
 
@@ -38,13 +36,15 @@
         <h2><?php echo __('Tags'); ?></h2>
         <div class="element-text"><?php echo tag_string('item'); ?></div>
     </div>
-    <?php endif;?>
+    <?php endif; ?>
 
     <!-- The following prints a citation for this item. -->
     <div id="item-citation" class="element">
         <h2><?php echo __('Citation'); ?></h2>
         <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
     </div>
+
+    <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </aside>
 

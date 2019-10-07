@@ -2,3 +2,7 @@
 .sass-cache
 node_modules/
 package-lock.json
+
+# Local temporary files
+/build.xml
+/languages/

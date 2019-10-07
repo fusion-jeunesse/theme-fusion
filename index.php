@@ -1,7 +1,22 @@
+<?php
+// 2019-08-08
+// Utilisateur connecté ? On redirige vers /find/advanced
+// Pas authentifié ? On redirige vers /users/login
+
+if (/**/ true /*/ false /**/) {
+	
+	$uri = current_user() ? '/find/advanced' : '/users/login';
+	header("Location: https://biblio.fusionjeunesse.org$uri", true, 307); // redirection temporaire
+
+	// On ignore le reste (aucune page n'est générée)
+	return;
+}
+
+?>
 <?php echo head(array('bodyid'=>'home')); ?>
 
 <?php if (get_theme_option('Homepage Text')): ?>
-<p><?php echo get_theme_option('Homepage Text'); ?></p>
+<p><?php echo __(get_theme_option('Homepage Text')); ?></p>
 <?php endif; ?>
 
 <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
