@@ -4,10 +4,10 @@
 
         <div id="custom-footer-text">
             <?php if ( $footerText = get_theme_option('Footer Text') ): ?>
-            <p><?php echo $footerText; ?></p>
+            <p><?php echo __($footerText); ?></p>
             <?php endif; ?>
             <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
-                <p><?php echo $copyright; ?></p>
+                <p><?php echo __($copyright); ?></p>
             <?php endif; ?>
         </div>
 
